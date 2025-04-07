@@ -1,3 +1,5 @@
+This is a modified version of the project originally created by n8n-io. Changes have been made for internal or personal use.
+
 # Self-hosted AI starter kit
 
 **Self-hosted AI Starter Kit** is an open-source Docker Compose template designed to swiftly initialize a comprehensive local AI and low-code development environment.
@@ -45,27 +47,6 @@ cd self-hosted-ai-starter-kit
 ```
 
 ### Running n8n using Docker Compose
-
-#### For Nvidia GPU users
-
-```
-git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
-cd self-hosted-ai-starter-kit
-docker compose --profile gpu-nvidia up
-```
-
-> [!NOTE]
-> If you have not used your Nvidia GPU with Docker before, please follow the
-> [Ollama Docker instructions](https://github.com/ollama/ollama/blob/main/docs/docker.md).
-
-### For AMD GPU users on Linux
-
-```
-git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
-cd self-hosted-ai-starter-kit
-docker compose --profile gpu-amd up
-```
-
 #### For Mac / Apple Silicon users
 
 If you’re using a Mac with an M1 or newer processor, you can't expose your GPU
@@ -86,8 +67,6 @@ cd self-hosted-ai-starter-kit
 docker compose up
 ```
 
-##### For Mac users running OLLAMA locally
-
 If you're running OLLAMA locally on your Mac (not in Docker), you need to modify the OLLAMA_HOST environment variable
 in the n8n service configuration. Update the x-n8n section in your Docker Compose file as follows:
 
@@ -105,13 +84,6 @@ Additionally, after you see "Editor is now accessible via: <http://localhost:567
 2. Click on "Local Ollama service"
 3. Change the base URL to "http://host.docker.internal:11434/"
 
-#### For everyone else
-
-```
-git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
-cd self-hosted-ai-starter-kit
-docker compose --profile cpu up
-```
 
 ## ⚡️ Quick start and usage
 
@@ -145,25 +117,11 @@ language model and Qdrant as your vector store.
 
 ## Upgrading
 
-* ### For Nvidia GPU setups:
-
-```bash
-docker compose --profile gpu-nvidia pull
-docker compose create && docker compose --profile gpu-nvidia up
-```
-
 * ### For Mac / Apple Silicon users
 
 ```
 docker compose pull
 docker compose create && docker compose up
-```
-
-* ### For Non-GPU setups:
-
-```bash
-docker compose --profile cpu pull
-docker compose create && docker compose --profile cpu up
 ```
 
 ## 👓 Recommended reading
